@@ -16,6 +16,52 @@
 
   const desktop = window.matchMedia("(min-width: 1100px)");
 
+  /* ---------- anime.js ---------- */
+  // Анімації вмикаються, лише якщо бібліотека завантажилась і скрипт у <head>
+  // додав клас .anim (рух дозволений і не ввімкнено версію для людей з порушенням зору).
+  const anime = window.anime;
+  let animOn = Boolean(anime) && root.classList.contains("anim");
+  if (animOn) {
+    window.__kpikAnim = true;
+  } else {
+    root.classList.remove("anim");
+  }
+
+  // Запускає анімацію і на час її виконання вимикає CSS-переходи елементів,
+  // щоб вони не змагалися з покадровими змінами transform.
+  const play = (targets, params) => {
+    const els = [...targets];
+    if (!els.length) return null;
+    els.forEach((el) => el.classList.add("is-animating"));
+    const { onComplete } = params;
+    return anime.animate(els, {
+      duration: 800,
+      ease: "outCubic",
+      ...params,
+      onComplete: (animation) => {
+        els.forEach((el) => {
+          el.classList.remove("is-animating");
+          el.style.removeProperty("transform");
+        });
+        if (onComplete) onComplete(animation);
+      },
+    });
+  };
+
+  const countUp = (el) => {
+    const end = parseInt(el.textContent, 10);
+    if (Number.isNaN(end)) return;
+    const counter = { value: parseInt(el.dataset.countFrom || "0", 10) };
+    el.textContent = String(counter.value);
+    anime.animate(counter, {
+      value: end,
+      duration: 1800,
+      ease: "outExpo",
+      onUpdate: () => { el.textContent = String(Math.round(counter.value)); },
+      onComplete: () => { el.textContent = String(end); },
+    });
+  };
+
   /* ---------- Фото: запасний фон, якщо зображення не завантажилось ---------- */
   const dropBrokenImage = (img) => img.remove();
   document.querySelectorAll("img[data-fallback]").forEach((img) => {
@@ -58,6 +104,14 @@
     document.body.classList.toggle("nav-open", open);
     if (open) {
       navClose.focus();
+      if (animOn && !desktop.matches) {
+        play(nav.querySelectorAll(".nav__list > li, .nav__extra > *"), {
+          opacity: [0, 1],
+          translateX: [32, 0],
+          duration: 600,
+          delay: anime.stagger(40, { start: 120 }),
+        });
+      }
     }
   };
 
@@ -160,24 +214,102 @@
     toTop.addEventListener("click", () => window.scrollTo({ top: 0 }));
   }
 
-  /* ---------- Поява блоків при прокручуванні ---------- */
-  const revealItems = document.querySelectorAll("[data-reveal]");
+  /* ---------- Поява блоків ---------- */
+  const revealItems = [...document.querySelectorAll("[data-reveal]")];
+  let revealObserver = null;
 
-  if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(
+  const markRevealed = (el) => {
+    el.dataset.revealed = "";
+    if (revealObserver) revealObserver.unobserve(el);
+  };
+
+  const showWithoutAnimation = () => {
+    animOn = false;
+    root.classList.remove("anim");
+    revealItems.forEach((el) => el.classList.add("is-visible"));
+  };
+
+  // Банер: заголовок з'являється по словах, далі текст, кнопки, картка й швидкі посилання.
+  const animateIntro = () => {
+    const hero = document.querySelector(".hero, .page-hero");
+    if (!hero) return;
+    const pick = (selector) => hero.querySelectorAll(selector);
+    let splitter = null;
+    const timeline = anime.createTimeline({
+      defaults: { ease: "outExpo", duration: 1000 },
+      // Повертає заголовку початкову розмітку після анімації.
+      onComplete: () => { if (splitter) splitter.revert(); },
+    });
+    const add = (targets, params, position) => {
+      if (targets.length) timeline.add(targets, params, position);
+    };
+
+    const title = hero.querySelector("h1");
+    let words = [];
+    if (title) {
+      splitter = anime.splitText(title, { words: true });
+      words = splitter.words;
+      words.forEach((word) => { word.style.display = "inline-block"; });
+      anime.utils.set(words, { opacity: 0 });
+      title.style.opacity = "1";
+    }
+
+    add(pick(".hero__bg, .page-hero__bg"), { scale: [1.12, 1], duration: 2400, ease: "outQuart" }, 0);
+    add(pick(".hero__eyebrow, .breadcrumbs"), { opacity: [0, 1], translateY: [16, 0] }, 100);
+    add(words, { opacity: [0, 1], translateY: ["0.45em", 0], delay: anime.stagger(70) }, 250);
+    add(pick(".hero__lead, .page-hero p"), { opacity: [0, 1], translateY: [20, 0] }, 550);
+    add(pick(".hero__actions, .page-hero__actions"), { opacity: [0, 1], translateY: [20, 0] }, 700);
+    add(pick(".hero-card"), { opacity: [0, 1], translateX: [40, 0], duration: 1100 }, 400);
+    add(pick(".hero-card__list li"), { opacity: [0, 1], translateX: [24, 0], delay: anime.stagger(110) }, 750);
+    if (hero.classList.contains("hero")) {
+      add(document.querySelectorAll(".quick__grid > li"), {
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 900,
+        delay: anime.stagger(70),
+      }, 800);
+    }
+  };
+
+  if (animOn) {
+    try {
+      animateIntro();
+
+      revealObserver = new IntersectionObserver(
+        (entries) => {
+          const batch = entries
+            .filter((entry) => entry.isIntersecting && !("revealed" in entry.target.dataset))
+            .map((entry) => entry.target);
+          if (!batch.length) return;
+          batch.forEach(markRevealed);
+          play(batch, { opacity: [0, 1], translateY: [28, 0], delay: anime.stagger(90) });
+          batch.forEach((el) => el.querySelectorAll(".stat__value").forEach(countUp));
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+      );
+      revealItems.forEach((el) => revealObserver.observe(el));
+
+      document.querySelectorAll(".collage__badge").forEach((badge) => {
+        anime.animate(badge, { translateY: [-6, 6], duration: 2600, ease: "inOutSine", loop: true, alternate: true });
+      });
+    } catch (error) {
+      showWithoutAnimation();
+    }
+  } else if ("IntersectionObserver" in window) {
+    const classObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
+            classObserver.unobserve(entry.target);
           }
         });
       },
       { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
     );
-    revealItems.forEach((el) => revealObserver.observe(el));
+    revealItems.forEach((el) => classObserver.observe(el));
   } else {
-    revealItems.forEach((el) => el.classList.add("is-visible"));
+    showWithoutAnimation();
   }
 
   /* ---------- Зміст сторінки: підсвічування активного розділу ---------- */
@@ -228,7 +360,21 @@
       });
     };
 
-    chips.forEach((chip) => chip.addEventListener("click", () => applyFilter(chip.dataset.filter)));
+    chips.forEach((chip) =>
+      chip.addEventListener("click", () => {
+        applyFilter(chip.dataset.filter);
+        if (!animOn) return;
+        const shown = deptSections.filter((section) => !section.hidden);
+        const cards = shown.flatMap((section) => [...section.querySelectorAll("[data-reveal]")]);
+        cards.forEach(markRevealed);
+        play(shown.map((section) => section.querySelector(".dept-section__banner")).filter(Boolean), {
+          opacity: [0, 1],
+          scale: [0.97, 1],
+          duration: 600,
+        });
+        play(cards, { opacity: [0, 1], translateY: [24, 0], duration: 600, delay: anime.stagger(60) });
+      })
+    );
 
     const syncWithHash = () => {
       const id = window.location.hash.slice(1);
@@ -264,6 +410,9 @@
         dialogImg.src = link.href;
         dialogImg.alt = thumb.alt;
         dialog.showModal();
+        if (animOn) {
+          anime.animate(dialogImg, { opacity: [0, 1], scale: [0.94, 1], duration: 450, ease: "outCubic" });
+        }
       });
     });
   }

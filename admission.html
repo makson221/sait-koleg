@@ -16,7 +16,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>try{if(localStorage.getItem("kpik-a11y")==="1")document.documentElement.classList.add("a11y")}catch(e){}</script>
+  <script>
+    (function () {
+      var d = document.documentElement;
+      try { if (localStorage.getItem("kpik-a11y") === "1") d.classList.add("a11y"); } catch (e) {}
+      if (d.classList.contains("a11y") || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      d.classList.add("anim");
+      setTimeout(function () { if (!window.__kpikAnim) d.classList.remove("anim"); }, 3000);
+    })();
+  </script>
+  <script src="assets/vendor/anime.umd.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
