@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Про коледж — КПІК</title>
+  <meta name="description" content="Історія, адміністрація, відділення, матеріальна база та міжнародна співпраця Кам'янець-Подільського фахового коледжу індустрії, бізнесу та інформаційних технологій.">
+  <meta name="theme-color" content="#12357a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="КПІК">
+  <meta property="og:title" content="Про коледж — КПІК">
+  <meta property="og:description" content="Історія, адміністрація, відділення, матеріальна база та міжнародна співпраця Кам'янець-Подільського фахового коледжу індустрії, бізнесу та інформаційних технологій.">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      try { if (localStorage.getItem("kpik-a11y") === "1") d.classList.add("a11y"); } catch (e) {}
+      if (d.classList.contains("a11y") || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      d.classList.add("anim");
+      setTimeout(function () { if (!window.__kpikAnim) d.classList.remove("anim"); }, 3000);
+    })();
+  </script>
+  <script src="assets/vendor/anime.umd.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <ul class="topbar__contacts">
+        <li class="topbar__address"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>вул. Павла Скоропадського, 17, м. Кам'янець-Подільський</span></li>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+380673365033">+38 (067) 336-50-33</a></li>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:industrial_k_p@ukr.net">industrial_k_p@ukr.net</a></li>
+      </ul>
+      <button class="a11y-toggle" type="button" aria-pressed="false" data-a11y-toggle><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><span>Людям з порушенням зору</span></button>
+    </div>
+  </div>
+
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="КПІК — на головну сторінку">
+        <img src="assets/img/logo.svg" alt="" width="44" height="44">
+        <span class="brand__text">
+          <strong>КПІК</strong>
+          <span>Фаховий коледж індустрії, бізнесу та інформаційних технологій</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Головне меню" data-nav>
+        <div class="nav__head">
+          <span class="nav__title">Меню</span>
+          <button class="icon-btn" type="button" data-nav-close><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Закрити меню</span></button>
+        </div>
+        <ul class="nav__list">
+          <li class="nav__item nav__item--home"><a class="nav__link" href="index.html">Головна</a></li>
+          <li class="nav__item has-sub">
+            <div class="nav__row">
+              <a class="nav__link" href="about.html" aria-current="page">Про коледж</a>
+              <button class="nav__sub-toggle" type="button" aria-expanded="false" aria-controls="sub-about" data-sub-toggle><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg><span class="visually-hidden">Підменю «Про коледж»</span></button>
+            </div>
+            <ul class="nav__sub" id="sub-about">
+              <li><a href="about.html#history">Історія</a></li>
+              <li><a href="about.html#administration">Адміністрація</a></li>
+              <li><a href="about.html#departments">Відділення</a></li>
+              <li><a href="about.html#base">Матеріальна база</a></li>
+              <li><a href="about.html#international">Міжнародна співпраця</a></li>
+              <li><a href="transparency.html">Публічна інформація</a></li>
+            </ul>
+          </li>
+          <li class="nav__item has-sub">
+            <div class="nav__row">
+              <a class="nav__link" href="specialties.html">Спеціальності</a>
+              <button class="nav__sub-toggle" type="button" aria-expanded="false" aria-controls="sub-specialties" data-sub-toggle><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg><span class="visually-hidden">Підменю «Спеціальності»</span></button>
+            </div>
+            <ul class="nav__sub" id="sub-specialties">
+              <li><a href="specialties.html#computer">Відділення комп'ютерних технологій</a></li>
+              <li><a href="specialties.html#geo">Відділення геотехнологій</a></li>
+              <li><a href="specialties.html#energy">Відділення енергетики та бізнесу</a></li>
+            </ul>
+          </li>
+          <li class="nav__item has-sub">
+            <div class="nav__row">
+              <a class="nav__link" href="admission.html">Вступнику</a>
+              <button class="nav__sub-toggle" type="button" aria-expanded="false" aria-controls="sub-admission" data-sub-toggle><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg><span class="visually-hidden">Підменю «Вступнику»</span></button>
+            </div>
+            <ul class="nav__sub" id="sub-admission">
+              <li><a href="admission.html#rules">Правила прийому 2026</a></li>
+              <li><a href="admission.html#programs">Спеціальності та програми</a></li>
+              <li><a href="admission.html#steps">Етапи вступу</a></li>
+              <li><a href="admission.html#documents">Перелік документів</a></li>
+              <li><a href="admission.html#committee">Приймальна комісія</a></li>
+              <li><a href="admission.html#faq">Питання та відповіді</a></li>
+            </ul>
+          </li>
+          <li class="nav__item has-sub">
+            <div class="nav__row">
+              <a class="nav__link" href="students.html">Студенту</a>
+              <button class="nav__sub-toggle" type="button" aria-expanded="false" aria-controls="sub-students" data-sub-toggle><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg><span class="visually-hidden">Підменю «Студенту»</span></button>
+            </div>
+            <ul class="nav__sub" id="sub-students">
+              <li><a href="students.html#schedule">Розклад занять</a></li>
+              <li><a href="students.html#distance">Дистанційне навчання</a></li>
+              <li><a href="students.html#library">Бібліотека</a></li>
+              <li><a href="students.html#dorm">Гуртожиток</a></li>
+              <li><a href="students.html#self-government">Студентське самоврядування</a></li>
+              <li><a href="students.html#psychology">Психологічна служба</a></li>
+              <li><a href="students.html#safety">Безпека</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="news.html">Новини</a></li>
+          <li class="nav__item"><a class="nav__link" href="contacts.html">Контакти</a></li>
+        </ul>
+        <div class="nav__extra">
+          <a class="btn btn--accent btn--block" href="admission.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Вступ 2026</a>
+          <a class="nav__contact" href="tel:+380977586434"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><small>Приймальна комісія</small>+38 (097) 758-64-34</span></a>
+          <a class="nav__contact" href="tel:+380673365033"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><small>Приймальна директора</small>+38 (067) 336-50-33</span></a>
+          <a class="nav__contact" href="mailto:industrial_k_p@ukr.net"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span><small>Електронна пошта</small>industrial_k_p@ukr.net</span></a>
+          <button class="btn btn--outline btn--block" type="button" aria-pressed="false" data-a11y-toggle><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg> Людям з порушенням зору</button>
+        </div>
+      </nav>
+
+      <a class="btn btn--accent header__cta" href="admission.html">Вступ 2026</a>
+      <button class="icon-btn burger" type="button" aria-expanded="false" aria-controls="site-nav" data-burger><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="visually-hidden">Відкрити меню</span></button>
+    </div>
+  </header>
+  <div class="nav-overlay" data-nav-overlay hidden></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Навігаційний ланцюжок">
+          <ol>
+            <li><a href="index.html">Головна</a></li>
+            <li aria-current="page">Про коледж</li>
+          </ol>
+        </nav>
+        <h1>Про коледж</h1>
+        <p>Державний заклад фахової передвищої освіти, що з 1945 року готує фахівців для промисловості, IT, енергетики, землеустрою та сфери послуг.</p>
+      </div>
+    </section>
+
+    <div class="container page-layout">
+      <aside class="toc" aria-label="На цій сторінці">
+        <div class="toc__inner">
+          <p class="toc__title">На цій сторінці</p>
+          <ul>
+            <li><a href="#intro">Загальна інформація</a></li>
+            <li><a href="#history">Історія</a></li>
+            <li><a href="#administration">Адміністрація</a></li>
+            <li><a href="#departments">Відділення</a></li>
+            <li><a href="#base">Матеріальна база</a></li>
+            <li><a href="#gallery">Фотогалерея</a></li>
+            <li><a href="#international">Міжнародна співпраця</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="content">
+        <section id="intro" aria-labelledby="intro-title">
+          <h2 id="intro-title">Загальна інформація</h2>
+          <div class="prose">
+            <p>Кам'янець-Подільський фаховий коледж індустрії, бізнесу та інформаційних технологій (КПІК) — державний заклад фахової передвищої освіти в Хмельницькій області. Коледж готує фахових молодших бакалаврів на основі базової та профільної середньої освіти.</p>
+            <p>Навчання організоване на трьох відділеннях — комп'ютерних технологій, геотехнологій, енергетики та бізнесу — за вісьмома спеціальностями.</p>
+          </div>
+          <figure class="media media--wide">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&amp;fit=crop&amp;w=1400&amp;q=70" alt="Студенти біля навчального корпусу" loading="lazy" decoding="async" data-fallback>
+          </figure>
+          <div class="table-wrap">
+            <table class="table-kv">
+              <caption class="visually-hidden">Реквізити коледжу</caption>
+              <tbody>
+                <tr><th scope="row">Повна назва</th><td>Кам'янець-Подільський фаховий коледж індустрії, бізнесу та інформаційних технологій</td></tr>
+                <tr><th scope="row">Скорочена назва</th><td>КПІК</td></tr>
+                <tr><th scope="row">Форма власності</th><td>Державна</td></tr>
+                <tr><th scope="row">Код ЄДРПОУ</th><td>00284049</td></tr>
+                <tr><th scope="row">Код закладу в ЄДЕБО</th><td>443</td></tr>
+                <tr><th scope="row">Адреса</th><td>вул. Павла Скоропадського, 17, м. Кам'янець-Подільський, Хмельницька обл., 32300</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="history" aria-labelledby="history-title">
+          <h2 id="history-title">Історія</h2>
+          <ol class="timeline">
+            <li data-reveal>
+              <span class="timeline__year">1945</span>
+              <h3>Заснування індустріального технікуму</h3>
+              <p>20 квітня 1945 року постановою № 485 передбачено відкриття індустріального технікуму в Кам'янці-Подільському. Відтоді заклад безперервно готує технічних фахівців для регіону.</p>
+            </li>
+            <li data-reveal>
+              <span class="timeline__year">2000</span>
+              <h3>Початок підготовки програмістів</h3>
+              <p>Започатковано підготовку фахівців з розробки програмного забезпечення — нині це спеціальність F2 «Інженерія програмного забезпечення».</p>
+            </li>
+            <li data-reveal>
+              <span class="timeline__year">2007</span>
+              <h3>Статус коледжу</h3>
+              <p>Наказом Міністерства освіти і науки України від 7 листопада 2007 року технікум перейменовано на Кам'янець-Подільський індустріальний коледж.</p>
+            </li>
+            <li data-reveal>
+              <span class="timeline__year">Сьогодні</span>
+              <h3>Фаховий коледж індустрії, бізнесу та ІТ</h3>
+              <p>Після ухвалення Закону України «Про фахову передвищу освіту» заклад отримав сучасну назву. Коледж розвиває IT-напрям, геотехнології, енергетику та бізнес-освіту, розвиває міжнародну співпрацю.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section id="administration" aria-labelledby="administration-title">
+          <h2 id="administration-title">Адміністрація</h2>
+          <article class="card person" data-reveal>
+            <span class="person__avatar" aria-hidden="true">СН</span>
+            <div class="person__body">
+              <h3 class="person__name">Никифорчин Сергій Зіновійович</h3>
+              <p class="person__role">Директор коледжу</p>
+              <ul class="person__contacts">
+                <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+380673365033">+38 (067) 336-50-33</a> <span class="muted">(приймальна)</span></li>
+                <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:industrial_k_p@ukr.net">industrial_k_p@ukr.net</a></li>
+              </ul>
+            </div>
+          </article>
+          <h3 class="subhead">Структура управління</h3>
+          <ul class="pill-grid">
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg> Педагогічна рада</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> Заступники директора</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg> Відділення</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Циклові комісії</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Приймальна комісія</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> Психологічна служба</li>
+          </ul>
+        </section>
+
+        <section id="departments" aria-labelledby="departments-title">
+          <h2 id="departments-title">Відділення</h2>
+          <div class="grid grid--3">
+          <article class="card dept dept--computer" data-reveal>
+            <div class="dept__top">
+              <img class="dept__bg" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" decoding="async" data-fallback>
+              <span class="dept__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
+              <h3>Відділення комп'ютерних технологій</h3>
+            </div>
+            <div class="dept__body">
+              <ul class="spec-list">
+                <li><span class="code">F2</span><span>Інженерія програмного забезпечення</span></li>
+                <li><span class="code">F7</span><span>Комп'ютерна інженерія</span></li>
+              </ul>
+              <a class="dept__link" href="specialties.html#computer">Детальніше <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>
+          <article class="card dept dept--geo" data-reveal>
+            <div class="dept__top">
+              <img class="dept__bg" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" decoding="async" data-fallback>
+              <span class="dept__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span>
+              <h3>Відділення геотехнологій</h3>
+            </div>
+            <div class="dept__body">
+              <ul class="spec-list">
+                <li><span class="code">G16</span><span>Гірництво та нафтогазові технології</span></li>
+                <li><span class="code">G18</span><span>Геодезія та землеустрій</span></li>
+              </ul>
+              <a class="dept__link" href="specialties.html#geo">Детальніше <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>
+          <article class="card dept dept--energy" data-reveal>
+            <div class="dept__top">
+              <img class="dept__bg" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" decoding="async" data-fallback>
+              <span class="dept__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+              <h3>Відділення енергетики та бізнесу</h3>
+            </div>
+            <div class="dept__body">
+              <ul class="spec-list">
+                <li><span class="code">G3</span><span>Електрична інженерія</span></li>
+                <li><span class="code">D2</span><span>Фінанси, банківська справа, страхування та фондовий ринок</span></li>
+                <li><span class="code">D3</span><span>Менеджмент</span></li>
+                <li><span class="code">J2</span><span>Готельно-ресторанна справа</span></li>
+              </ul>
+              <a class="dept__link" href="specialties.html#energy">Детальніше <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </article>
+        </div>
+
+        </section>
+
+        <section id="base" aria-labelledby="base-title">
+          <h2 id="base-title">Матеріальна база</h2>
+          <p class="prose">Освітній процес забезпечують навчальні корпуси, лабораторії та майстерні, бібліотека й гуртожиток.</p>
+          <div class="grid grid--3 grid--tight">
+            <article class="card feature feature--sm"><span class="feature__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span><h3>Навчальні корпуси</h3><p>Аудиторії та кабінети для теоретичних занять.</p></article>
+            <article class="card feature feature--sm"><span class="feature__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><h3>Комп'ютерні класи</h3><p>Робочі місця для програмування та роботи з ГІС.</p></article>
+            <article class="card feature feature--sm"><span class="feature__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><h3>Лабораторії й майстерні</h3><p>Практичні заняття з електротехніки та обробки матеріалів.</p></article>
+            <article class="card feature feature--sm"><span class="feature__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><h3>Бібліотека</h3><p>Навчальна та фахова література, читальна зала.</p></article>
+            <article class="card feature feature--sm"><span class="feature__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><h3>Спортивна база</h3><p>Заняття фізичною культурою та секції.</p></article>
+            <article class="card feature feature--sm"><span class="feature__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><h3>Гуртожиток</h3><p>Поселення іногородніх студентів.</p></article>
+          </div>
+        </section>
+
+        <section id="gallery" aria-labelledby="gallery-title">
+          <h2 id="gallery-title">Фотогалерея</h2>
+          <!-- Тимчасові фото з Unsplash: замініть на фотографії коледжу. -->
+          <ul class="gallery" data-gallery>
+            <li><a class="gallery__item media" href="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&amp;fit=crop&amp;w=1600&amp;q=70" data-gallery-item><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="Лекція в аудиторії" loading="lazy" decoding="async" data-fallback></a></li>
+            <li><a class="gallery__item media" href="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=1600&amp;q=70" data-gallery-item><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="Заняття з програмування" loading="lazy" decoding="async" data-fallback></a></li>
+            <li><a class="gallery__item media" href="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&amp;fit=crop&amp;w=1600&amp;q=70" data-gallery-item><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="Бібліотека" loading="lazy" decoding="async" data-fallback></a></li>
+            <li><a class="gallery__item media" href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1600&amp;q=70" data-gallery-item><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="Студенти працюють над проєктом" loading="lazy" decoding="async" data-fallback></a></li>
+            <li><a class="gallery__item media" href="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=1600&amp;q=70" data-gallery-item><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="Лабораторія комп'ютерних мереж" loading="lazy" decoding="async" data-fallback></a></li>
+            <li><a class="gallery__item media" href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&amp;fit=crop&amp;w=1600&amp;q=70" data-gallery-item><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="Випуск" loading="lazy" decoding="async" data-fallback></a></li>
+          </ul>
+        </section>
+
+        <section id="international" aria-labelledby="international-title">
+          <h2 id="international-title">Міжнародна співпраця</h2>
+          <article class="card partner" data-reveal>
+            <span class="feature__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+            <div>
+              <h3>Ботошанський економічний коледж (Румунія)</h3>
+              <p>Коледж уклав двосторонню угоду про співпрацю. Партнерство відкриває можливості для обміну досвідом між викладачами та студентами і спільних освітніх проєктів.</p>
+            </div>
+          </article>
+          <div class="callout callout--info">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+            <p>Установчі документи, ліцензії, звіти та інша публічна інформація — у розділі <a href="transparency.html">«Публічна інформація»</a>.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand brand--light" href="index.html" aria-label="КПІК — на головну сторінку">
+          <img src="assets/img/logo.svg" alt="" width="44" height="44">
+          <span class="brand__text"><strong>КПІК</strong><span>з 1945 року</span></span>
+        </a>
+        <p>Кам'янець-Подільський фаховий коледж індустрії, бізнесу та інформаційних технологій — державний заклад фахової передвищої освіти.</p>
+      </div>
+      <div>
+        <h2 class="footer__title">Коледж</h2>
+        <ul>
+          <li><a href="about.html">Про коледж</a></li>
+          <li><a href="about.html#history">Історія</a></li>
+          <li><a href="news.html">Новини</a></li>
+          <li><a href="transparency.html">Публічна інформація</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer__title">Навчання</h2>
+        <ul>
+          <li><a href="admission.html">Вступ 2026</a></li>
+          <li><a href="specialties.html">Спеціальності</a></li>
+          <li><a href="students.html#schedule">Розклад занять</a></li>
+          <li><a href="students.html#dorm">Гуртожиток</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer__title">Контакти</h2>
+        <ul class="footer__contacts">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>вул. Павла Скоропадського, 17, м. Кам'янець-Подільський, Хмельницька обл., 32300</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+380673365033">+38 (067) 336-50-33</a></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+380977586434">+38 (097) 758-64-34</a></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:industrial_k_p@ukr.net">industrial_k_p@ukr.net</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© <span data-year>2026</span> КПІК. Усі права захищено.</p>
+        <p><a href="transparency.html">Прозорість та інформаційна відкритість</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" data-to-top><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span class="visually-hidden">Повернутися нагору</span></button>
+</body>
+</html>
